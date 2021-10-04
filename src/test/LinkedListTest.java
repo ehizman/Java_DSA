@@ -233,5 +233,22 @@ class LinkedListTest {
         assertNull(list.getTail());
         assertEquals(0, list.getCount());
     }
+
+    @Test
+    void canCopyLinkedListToArray(){
+        Node firstNode = new Node(86);
+        list.add(firstNode);
+
+        Node secondNode = new Node(5);
+        list.add(secondNode);
+
+        Node thirdNode = new Node(90);
+        list.add(thirdNode);
+        int[] array = new int[3];
+        list.copyTo(array, 0);
+        assertEquals(86, array[0]);
+        assertEquals(5, array[1]);
+        assertEquals(90, array[2]);
+    }
 }
 

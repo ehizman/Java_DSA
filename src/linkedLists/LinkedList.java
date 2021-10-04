@@ -88,4 +88,13 @@ public class LinkedList<T>{
         tail = null;
         count = 0;
     }
+
+    public void copyTo(int[] array, T startIndex) {
+        Integer index = (Integer) startIndex;
+        Node currentNode = head;
+        while (currentNode != null){
+            array[index++] = currentNode.getData();
+            currentNode = currentNode.getNextNode();
+        }
+    }
 }
