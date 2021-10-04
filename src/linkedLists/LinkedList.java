@@ -69,4 +69,23 @@ public class LinkedList<T>{
     }
 
 
+    public boolean contains(T dataToSearchFor) {
+        Node currentNode = head;
+
+        while(currentNode != null){
+            if (currentNode.getData() == (Integer) dataToSearchFor){
+                return true;
+            }
+            else{
+                currentNode = currentNode.getNextNode();
+            }
+        }
+        return false;
+    }
+
+    public void clear() {
+        head = null;
+        tail = null;
+        count = 0;
+    }
 }

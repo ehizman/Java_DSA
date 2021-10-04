@@ -187,5 +187,51 @@ class LinkedListTest {
         list.add(fourthNode);
         assertFalse(list.remove(12));
     }
+
+    @Test
+    void test_ThatReturnTrueWhenListContainsNodeWithDataBeingSearchedFor(){
+        Node firstNode = new Node(86);
+        list.add(firstNode);
+
+        Node secondNode = new Node(5);
+        list.add(secondNode);
+
+        Node thirdNode = new Node(90);
+        list.add(thirdNode);
+
+        assertTrue(list.contains(86));
+    }
+
+    @Test
+    void test_ThatReturnsFalseWhenListDoesNotContainNodeWithDataToSearchFor(){
+        Node firstNode = new Node(86);
+        list.add(firstNode);
+
+        Node secondNode = new Node(5);
+        list.add(secondNode);
+
+        Node thirdNode = new Node(90);
+        list.add(thirdNode);
+
+        assertFalse(list.contains(12));
+    }
+
+    @Test
+    void canClearLinkedList(){
+        Node firstNode = new Node(86);
+        list.add(firstNode);
+
+        Node secondNode = new Node(5);
+        list.add(secondNode);
+
+        Node thirdNode = new Node(90);
+        list.add(thirdNode);
+
+        list.clear();
+
+        assertNull(list.getHead());
+        assertNull(list.getTail());
+        assertEquals(0, list.getCount());
+    }
 }
 
