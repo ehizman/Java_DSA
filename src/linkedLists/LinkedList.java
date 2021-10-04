@@ -37,4 +37,36 @@ public class LinkedList<T>{
     public int getCount() {
         return count;
     }
+
+
+    public boolean remove(T dataToRemove) {
+        Node current = head;
+        Node previous = null;
+
+        while (current != null){
+           if (current.getData() == (Integer)dataToRemove){
+               if (previous != null){
+                   previous.setNextNode(current.getNextNode());
+               }
+               else{
+                   head = current.getNextNode();
+               }
+               if (head == null){
+                   tail = null;
+               }
+               if (current.getNextNode() == null){
+                   tail = previous;
+               }
+               count--;
+               return true;
+           }
+           else{
+               previous = current;
+               current = current.getNextNode();
+           }
+        }
+        return false;
+    }
+
+
 }
