@@ -2,7 +2,7 @@ package googleChallanges;
 
 public class Grandest_Stairs_Of_Them_All {
     public static void main(String[] args) {
-        System.out.println(solution(200));
+        System.out.println(solution(5));
     }
     public static int solution(int n){
         int[][] memo = new int[n +2][n +2];
